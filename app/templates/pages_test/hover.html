@@ -1,0 +1,27 @@
+ <!DOCTYPE html>
+    <html>
+    <head>
+    <script 
+    src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+    </head>
+    <body>
+
+      <h1 id="legend">title appears here</h1>
+
+      <div>
+        <img src="image1.jpg" class="class_of_div" title="Breakfast">
+        <img src="image2.jpg" class="class_of_div" title="Lunch">
+        <img src="image3.jpg" class="class_of_div" title="Dinner">
+      </div>
+
+      <script>
+        $(document).on('mouseover', '.class_of_div', function () {
+            var thiss=$(this);
+            $('#legend').text(thiss.attr('title'));
+        });
+      </script>
+
+    </body>
+    </html>
+

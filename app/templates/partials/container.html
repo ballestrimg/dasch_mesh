@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <!-- begin block head: -->
+    {% block head %}
+        <title>{% block title %}DaSCH Mesh{% endblock %}</title>
+        <!-- include partials css and metadata -->
+        {% include "partials/metadata.html" %}
+        {% include "partials/css.html" %}
+    <!-- end block head -->
+    {% endblock %}
+    </head>
+    
+    {% block css %}{%endblock%}
+    {% block js %}{%endblock%}
+
+    {% block body %}
+    <body>
+        {% block content %}
+        {% endblock %}
+    </body>
+    {% endblock %}
+</html>

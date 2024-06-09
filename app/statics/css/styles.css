@@ -1,0 +1,50 @@
+/* css.css */
+
+/* DaSCH typography applied */
+head,
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+/* Custom background, footer, navbar and button logo properties */
+.custom-bg,
+.custom-bg-footer,
+.custom-bg-nav,
+.custom-btn {
+    background-color: #74A2CF;
+    color: white;
+}
+
+/* form-label main properties */
+.form-label {
+    font-size: x-large;
+    width: 100%;
+    height: 24vh;
+    /* Ajuste a altura conforme necessário 130px se for voltar para antes*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #74A2CF;
+}
+
+/* DaSCH logo properties */
+.logo {
+    width: 100px;
+    height: auto;
+}
+
+/* Border label box */
+.border {
+    border-width: 3px !important;
+    border-style: dashed !important;
+    border-color: #74A2CF !important;
+}
+
+/* Dragging interaction */
+.dragging {
+    background-color: #e9ecee;
+    /* Cor de fundo ao arrastar */
+    border-color: #336790;
+    /* Cor da borda ao arrastar */
+}

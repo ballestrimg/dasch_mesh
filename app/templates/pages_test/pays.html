@@ -1,0 +1,30 @@
+<div class="container">
+    <h1>Welcome to Factbook</h1>
+    <p>This is the official link :
+        <a href="https://www.cia.gov/the-world-factbook/">https://www.cia.gov/the-world-factbook/</a></p>
+        <!-- <p>You chose this country: {{pays}}</p>
+        <p>Character size {{pays|length}}</p>
+        <p>It is a small country name</p> -->
+</div>
+
+<!-- test table parameters -->
+{%if data%}
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Capitale</th>
+            <th scope="col">Continent</th>
+        </tr>
+    </thead>
+    <tbody>
+        {%for pays in data%}<tr>
+            <th scope="row">{{loop.index}}</th>
+            <td>{{pays.nom}}</td>
+            <td>{{pays.capitale}}</td>
+            <td>{{pays.continent}}</td>
+        </tr>{%endfor%}
+    </tbody>
+</table>
+{%endif%}

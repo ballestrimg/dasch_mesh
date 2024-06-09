@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- begin block head: -->
+    {% block head %}
+    <head>
+        <title>DaSCH Converter</title>
+        <!-- <link rel="icon" type="image/x-icon" href="../../statics/img/logo-sans-bg.png"> -->
+        <!-- include partials css and metadata -->
+        {% include "partials/metadata.html" %}
+        {% include "partials/css.html" %}
+    </head>
+    <!-- end block head -->
+    {% endblock %}
+
+    {% block body %}
+    <body>
+    <!-- begin block body: -->
+        <h1 class="text-center">Welcome to DaSCH Converter!</h1>
+        <main class="flex-shrink-0">
+        <!-- begin block navbar: -->
+        <!-- Navigation-->
+        {% block navbar %}
+            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                    <div class="" id="">
+                        <ul class="nav justify-content-center">
+                            <li class="nav-item">
+                              <a class="nav-link" href="#">Active</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#">Link</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#">Link</a>
+                          </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- end block navbar -->
+            {% endblock %}
+        </main>
+        
+        <!-- Footer-->
+        <!-- begin block footer: -->
+        {% block footer %}
+        <footer class="footer text-center bg-primary">
+            <ul class="container list-unstyled d-flex justify-content-center">
+                <li class="nav-item"><a href="" class="nav-link text-white">Home</a></li>
+                <li class="nav-item"><a href="" class="nav-link text-white">FAQs</a></li>
+                <li class="nav-item"><a href="" class="nav-link text-white">About</a></li>
+            </ul>
+            <p class="text-white">© 2024 DaSCH</p>
+        </footer>
+        <!-- end block footer -->
+        {% endblock %}
+        <!-- include partials js -->
+        {% include "partials/js.html" %}
+    </body>
+    <!-- end block body -->
+    {% endblock %}
+</html>

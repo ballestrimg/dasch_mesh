@@ -1,0 +1,77 @@
+
+
+<div class="container mt-5">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="dropzone" id="droparea">
+          <label for="image" class="form-label">Click or drag to add your image file(s) here</label>
+          <input type="file" class="form-control" id="image" name="image" multiple>
+        </div>
+      </div>
+    </div>
+  
+    <div class="row mt-3" id="imageGrid">
+      <!-- Imagens serão carregadas aqui -->
+    </div>
+  
+    <div class="row mt-3">
+      <div class="col-md-12">
+        <button type="button" class="custom-bt btn btn-lg text-white" onclick="convertImages()">Convert Images</button>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    document.getElementById('droparea').addEventListener('drop', function(e) {
+      e.preventDefault();
+      handleDrop(e.dataTransfer.files);
+    });
+  
+    document.getElementById('droparea').addEventListener('dragover', function(e) {
+      e.preventDefault();
+    });
+  
+    document.getElementById('image').addEventListener('change', function(e) {
+      handleDrop(e.target.files);
+    });
+  
+    function handleDrop(files) {
+      const imageGrid = document.getElementById('imageGrid');
+      imageGrid.innerHTML = ''; // Limpa qualquer imagem existente no grid
+  
+      for (let i = 0; i < files.length; i++) {
+        const file = files[i];
+        const reader = new FileReader();
+  
+        reader.onload = function(e) {
+          const img = document.createElement('img');
+          img.src = e.target.result;
+          img.className = 'img-thumbnail mx-2 my-2';
+          imageGrid.appendChild(img);
+        }
+  
+        reader.readAsDataURL(file);
+      }
+    }
+  
+    function convertImages() {
+      // Adicione o código para enviar as imagens para o servidor e processá-las
+      // Aqui você pode usar AJAX ou enviar um formulário com enctype="multipart/form-data"
+      // por meio de JavaScript para o servidor.
+      // Exemplo:
+      // const formData = new FormData();
+      // // Adicione as imagens ao formulário formData
+      // // Enviar formData para o servidor usando fetch ou XMLHttpRequest
+      // fetch('/upload_image.html', {
+      //   method: 'POST',
+      //   body: formData
+      // })
+      // .then(response => {
+      //   // Lidar com a resposta do servidor
+      // })
+      // .catch(error => {
+      //   console.error('Error:', error);
+      // });
+    }
+  </script>
+  

@@ -1,0 +1,101 @@
+{% extends "./partials/container.html" %}
+
+{% block body %}
+
+<body>
+    <!-- begin block body: -->
+    <h1 class="custom-bg text-center text-white mb-0 py-3" title="DaSCH Mesh Home">DaSCH Mesh</i></h1>
+    <p class="custom-bg text-center text-white mb-0 py-3">Simplify and remesh your 3D object with a single click</p>
+    <main class="flex-shrink-0">
+        <div class="container mt-5">
+            <div>
+                <div class="container-fluid align-items-center justify-content-center">
+                    <form id="upload-form" action="/meshed_file" method="post" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="file" name="file">
+                                <label id="droparea" ondragover="handleDragOver(event)"
+                                    ondragleave="handleDragLeave(event)" ondrop="handleFileDrop(event)"
+                                    class="form-label border d-flex justify-content-center" for="file">
+                                    <p>Click or drag your 3D file here</p>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center mt-5">
+                            <button id="convert-btn" type="submit" class="custom-btn mt-5 btn btn-lg"
+                                title="Click here to convert your file">Simpilify 3D Object <i
+                                    class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div id="footer" class="fixed-bottom">
+            {% block footer %}
+            <!-- begin block footer: -->
+            <footer class="footer custom-bg-footer text-center mt-n5 py-4">
+                <img src="{{ url_for('static', filename='img/fingerprint_logo_bw.png') }}" alt="DaSCH Logo"
+                    class="logo">
+                <ul class="container list-unstyled d-flex justify-content-center">
+                    <li class="nav-item">
+                        <a href="" class="nav-link text-white">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link text-white">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link text-white">FAQs</a>
+                    </li>
+                </ul>
+                <p class="text-white">© 2024 by DaSCH</p>
+            </footer>
+            <!-- end block footer -->
+            {% endblock %}
+        </div>
+        <!-- include partials js -->
+        {% include "partials/js.html" %}
+    </main>
+
+    {% block js %}
+
+    <script>
+
+        // Função para manipular o arrastar sobre a área de soltar
+        function handleDragOver(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            document.getElementById('droparea').classList.add('dragging');
+        }
+
+        // Função para manipular a saída da área de soltar
+        function handleDragLeave(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            document.getElementById('droparea').classList.remove('dragging');
+        }
+
+        // Função para manipular o drop na área de soltar
+        function handleFileDrop(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            document.getElementById('droparea').classList.remove('dragging');
+
+            var files = event.dataTransfer.files;
+            document.getElementById('file').files = files;
+
+            // Atualiza o label do input de file com o nome do arquivo selecionado
+            if (files.length > 0) {
+                document.getElementById('droparea').innerText = files[0].name;
+            }
+        }
+
+    </script>
+
+    {% endblock %}
+
+</body>
+<!-- end block body -->
+{% endblock %}
+
+</html>

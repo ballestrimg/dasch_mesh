@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap 4 com jQuery</title>
+    <!-- CSS do Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Seu CSS personalizado -->
+    <style>
+        #loader {
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            margin: 0;
+            position: fixed; /* Para cobrir toda a tela */
+            top: 0;
+            left: 0;
+            z-index: 9999; /* Para garantir que esteja acima de outros elementos */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="loader">LOADING...</div>
+
+    <div class="container" style="display: none;" id="content">
+        <h1>Conteúdo da Página</h1>
+        <p>Esta é a sua página principal.</p>
+    </div>
+
+    <!-- jQuery e Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!-- JavaScript personalizado -->
+    <script>
+        $(window).on('load', function() {
+            $('#loader').fadeOut('fast', function() {
+                $('#content').fadeIn('fast'); // Mostrar o conteúdo da página
+            });
+        });
+    </script>
+</body>
+</html>
