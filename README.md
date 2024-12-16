@@ -13,7 +13,7 @@ DaSCH Mesh is a Python application designed to efficiently convert 3D images sto
 The application is organized as follows:
 
 ```
-dasch_converter/
+dasch_mesh-main/
 |
 ├── app/            # Main application folder
 │   ├── __pycache__/ # Compiled Python files
