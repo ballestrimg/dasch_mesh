@@ -4,7 +4,7 @@ DaSCH Mesh is a Python application designed to efficiently convert 3D images sto
 
 ## Features
 
-- Convert 3D objects from OBJ format into optimized and lightweight versions.
+- Convert 3D objects from `.obj` format into optimized and lightweight versions.
 - User-friendly interface with a focus on simplicity and ease of use.
 - Modular code structure for better maintainability and future expansion.
 
