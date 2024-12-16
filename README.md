@@ -101,7 +101,7 @@ Werkzeug==3.0.2
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/ballestrimg/dasch_mesh.git
+   git clone https://github.com/ballestrimg/dasch_mesh/
    cd dasch_mesh
    ```
 
