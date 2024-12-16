@@ -8,6 +8,28 @@ DaSCH Mesh is a Python application designed to efficiently convert 3D images sto
 - User-friendly interface with a focus on simplicity and ease of use.
 - Modular code structure for better maintainability and future expansion.
 
+## Folder Structure
+
+The application is organized as follows:
+
+```
+dasch_converter/
+|
+├── app/            # Main application folder
+│   ├── __pycache__/ # Compiled Python files
+│   ├── routes/      # Contains Flask route definitions
+│   ├── statics/     # Static files such as CSS, JavaScript, and images
+│   ├── templates/   # HTML templates for the web interface
+│   ├── tests/       # Unit tests for the application
+│   ├── __init__.py  # Initializes the Flask application
+│   ├── app.py       # Main application logic
+│   └── config.py    # Configuration settings for the application
+├── LICENSE.md       # MIT License file
+├── README.md        # Project documentation
+├── requirements.txt # Lists required libraries and dependencies
+└── run.py           # Script to start the Flask server
+```
+
 ## Requirements
 
 To run DaSCH Mesh, you need the following Python libraries:
@@ -73,4 +95,52 @@ tzdata==2024.1
 urllib3==2.2.1
 visitor==0.1.3
 Werkzeug==3.0.2
-zipp==3.18.1
+```
+
+## Installation and Setup
+
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/ballestrimg/dasch_mesh.git
+   cd dasch_mesh
+   ```
+
+2. **Create a Virtual Environment:**
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate
+   ```
+
+3. **Install the Dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Run the Application:**
+   ```bash
+   python app.py
+   ```
+
+5. **Access the App:**
+   Open your browser and go to `http://127.0.0.1:5000`.
+
+## Usage
+
+1. Upload an image in `.jpg`, `.jpeg`, or `.png` format via the web interface.
+2. The app will process the image and provide a lightweight version for download.
+
+## Running Tests
+
+To ensure the application is functioning correctly, you can run the tests provided in the `tests/` folder:
+
+```bash
+pytest tests/
+```
+
+## Contribution
+
+Contributions are welcome! Feel free to fork the repository, make changes, and submit a pull request. Ensure your changes pass all tests before submitting.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/ballestrimg/dasch_mesh/blob/main/LICENCE.md) file for more details.
