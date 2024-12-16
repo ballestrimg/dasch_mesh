@@ -1,6 +1,6 @@
 # DaSCH Mesh
 
-DaSCH Mesh is a Python application designed to efficiently convert 3D images stored in the OBJ format (.obj) into optimized and lightweight versions. Using a method similar to quadratic edge collapse decimation simplification (common in desktop software like MeshLab), it reduces the number of polygons in the mesh while preserving its overall shape, resulting in a smaller file size with minimal visual degradation.
+DaSCH Mesh is a Python application designed to efficiently convert 3D images stored in `.obj` into optimized and lightweight versions. Using a method similar to quadratic edge collapse decimation simplification (common in desktop software like MeshLab), it reduces the number of polygons in the mesh while preserving its overall shape, resulting in a smaller file size with minimal visual degradation.
 
 ## Features
 
